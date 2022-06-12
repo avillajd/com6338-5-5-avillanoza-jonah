@@ -18,7 +18,7 @@ function onSubmit(e){
 
     if (input.value !== ""){
         //Create new ul item
-        const btn = document.createElement('button')
+        const button = document.createElement('button')
         const li = document.createElement('li');
        
         
@@ -26,9 +26,11 @@ function onSubmit(e){
         li.className = 'items'
         console.log(li)
 
-        //add textnode with input value and button
+        //add textnode with input value and button ?
         li.appendChild(document.createTextNode(`${input.value}`))
-        li.appendChild(btn)
+        li.appendChild(button)
+        
+        
         
         
         //Appending Child 
@@ -38,6 +40,7 @@ function onSubmit(e){
 // if you dont enter a value returns...
         input.value = '';
     } else {
+        console.log('Type in a task... Test')
         return
     }
     
