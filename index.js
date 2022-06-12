@@ -3,6 +3,7 @@ var addToDo = document.querySelector('add-todo')
 var input= document.querySelector('input')
 const add = document.querySelector('button')
 const toDoList = document.querySelector('#todo-list')
+let buttons
 
 // Add Button event
 form.addEventListener('submit', onSubmit);
@@ -15,37 +16,44 @@ function onSubmit(e){
     e.preventDefault();
     console.log(input.value)
 
-    if (input.value){
+    if (input.value !== ""){
         //Create new ul item
+        const btn = document.createElement('button')
         const li = document.createElement('li');
-
-        // Add a list item within ToDo 
-        for (let i = 0; i < toDoList.length; i++) {
-            const li = item[i];
-        }
+       
         
         // Add a Class name
         li.className = 'items'
         console.log(li)
 
-        //add textnode with input value
+        //add textnode with input value and button
         li.appendChild(document.createTextNode(`${input.value}`))
+        li.appendChild(btn)
+        
         
         //Appending Child 
         toDoList.appendChild(li);
+        
 
-
+// if you dont enter a value returns...
         input.value = '';
+    } else {
+        return
     }
     
 }
 
-// Remove item
+// Remove item and Strike Through
 function removeItem(e){
     console.log('clicked for strike through');
     const strikeThrough = document.querySelector('items')
-    
-    
+
+    if (e.target.style.textDecoration != 'line-through') {
+        e.target.style.textDecoration = 'line-through'
+    } else if (e.target.style.textDecoration = 'line-through') {
+        e.target.parentElement.remove()
+        console.log('completed')
+    }
     
 
 }
