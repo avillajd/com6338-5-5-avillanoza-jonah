@@ -135,6 +135,9 @@ function runTests() {
     document.querySelector('form').addEventListener('submit', function(e) {
       e.preventDefault()
     })
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault()
+    })
     afterEach(() => {
       list.innerHTML = ""
       input.value = ""
