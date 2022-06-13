@@ -16,7 +16,9 @@ function onSubmit(e){
     e.preventDefault();
     console.log(input.value)
 
-    if (input.value !== ""){
+
+// Thanks for this tip Efren ...
+    if (input.value != false ){
         //Create new ul item
         const button = document.createElement('button')
         const li = document.createElement('li');
@@ -27,8 +29,9 @@ function onSubmit(e){
         console.log(li)
 
         //add textnode with input value and button ?
-        li.appendChild(document.createTextNode(`${input.value}`))
+        var todo = input.value.trim() //Thanks Efren!
         li.appendChild(button)
+        button.textContent = todo
         
         
         
@@ -39,6 +42,7 @@ function onSubmit(e){
 
 // if you dont enter a value returns...
         input.value = '';
+        
     } else {
         console.log('Type in a task... Test')
         return
