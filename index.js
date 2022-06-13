@@ -16,14 +16,12 @@ function onSubmit(e){
     e.preventDefault();
     console.log(input.value)
 
-
 // Thanks for this tip Efren ...
     if (input.value != false ){
         //Create new ul item
         const button = document.createElement('button')
         const li = document.createElement('li');
        
-        
         // Add a Class name
         li.className = 'items'
         console.log(li)
@@ -32,14 +30,10 @@ function onSubmit(e){
         var todo = input.value.trim() //Thanks Efren!
         li.appendChild(button)
         button.textContent = todo
-        
-        
-        
-        
+         
         //Appending Child 
         toDoList.appendChild(li);
         
-
 // if you dont enter a value returns...
         input.value = '';
         
